@@ -28,17 +28,17 @@ Before starting, it’s recommended to use a virtual environment to avoid librar
 
 #### macOS / Linux / WSL
 ```
-$ python3 -m venv rag-env
-$ source rag-env/bin/activate
-$ pip install -r requirements.txt
+python3 -m venv rag-env
+source rag-env/bin/activate
+pip install -r requirements.txt
 
 ```
 #### Windows PowerShell
 ```
-PS> python3 -m venv rag-env
-PS> Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
-PS> .\rag-env\Scripts\Activate
-PS> pip install -r requirements.txt
+python3 -m venv rag-env
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
+.\rag-env\Scripts\Activate
+pip install -r requirements.txt
 
 ```
 
