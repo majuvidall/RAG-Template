@@ -1,104 +1,92 @@
 # Retrieval-Augmented Generation (RAG) Template with LangChain
 
-This repository contains a practical, customizable **RAG (Retrieval-Augmented Generation)** pipeline template using **LangChain**, featuring PDF document loading, **chunking**, **embeddings** generation, and integration with LLMs (such as **OpenAI**).
+Este repositório contém um *template* prático e personalizável para construir uma pipeline de **RAG (Retrieval-Augmented Generation)** utilizando *LangChain*, com carregamento de documentos PDF, *chunking*, geração de *embeddings* e integração com modelos LLM (como *OpenAI*).
 
-In this template, we use a base document (a scientific article on RAG) located in the `meus_arquivos` folder. All parameters and prompts are configured for that document—you should replace it with your own document and adapt the parameters and prompts as shown in each step.
-
----
-
-## Introduction
-
-**RAG (Retrieval-Augmented Generation)** is an approach that combines:
-- Information retrieval from external sources (like PDF files)  
-- Text generation with language models  
-
-This template lets you build a complete pipeline that:
-- Loads one or more PDF documents  
-- Splits the texts into smaller pieces (chunks)  
-- Generates embeddings for semantic search  
-- Uses an LLM to answer questions based on the loaded documents  
+Nesse *template*, usaremos um documento base (artigo científico sobre RAG), contido na nossa pasta 'meus_arquivos'. Todos os parâmetros e *prompts* estão configurados para esse documento. Você deve substituí-lo pelo documento que deseja carregar, e adaptar os parâmetros e *prompts*, como veremos em cada etapa. 
 
 ---
 
-## Environment Setup
+## Introdução
 
-Before starting, it’s recommended to use a virtual environment to avoid library conflicts and keep the project organized.
+**RAG (Retrieval-Augmented Generation)** é uma abordagem que combina:
+- Recuperação de informação de fontes externas (como arquivos PDF)
+- Geração de texto com modelos de linguagem
 
-### Create a virtual environment and install dependencies
+Este template permite que você construa uma pipeline completa que:
+- Carrega um ou mais documentos PDF
+- Divide os textos em pedaços menores (chunks)
+- Gera embeddings para permitir buscas semânticas
+- Utiliza um modelo LLM para responder perguntas com base nos documentos carregados
 
-#### macOS / Linux / WSL
-```
-python3 -m venv rag-env
-source rag-env/bin/activate
-pip install -r requirements.txt
+---
 
-```
-#### Windows PowerShell
-```
-python3 -m venv rag-env
-Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
-.\rag-env\Scripts\Activate
-pip install -r requirements.txt
+## Setup do Ambiente
 
-```
+Antes de iniciar, é recomendado utilizar um ambiente virtual para evitar conflitos entre bibliotecas e manter o projeto organizado.
 
-### Install required libraries
+### Crie um ambiente virtual e instale as dependências
 
-The libraries used in this project are listed in `requirements.txt`. Running:
+#### Mac/Linux/WSL
 
 ```
-pip install -r requirements.txt
-```
-This will install all listed packages. You only need to do this once.
-
-
-## Project Structure
-
-```
-├── meus_arquivos       # Folder containing PDF files to process  
-├── main_rag.ipynb      # Main notebook with the RAG pipeline  
-├── requirements.txt    # Required libraries  
-├── .env                # Stores your OpenAI API key  
-└── README.md           # This file  
+$ python3 -m venv rag-env
+$ source rag-env/bin/activate
+$ pip install -r requirements.txt
 ```
 
-- The my_files folder contains the base document (a scientific article on RAGs). Replace it with the files you want to load into the RAG.
+#### Windows Powershell
+```
+PS> python3 -m venv rag-env
+PS> Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
+PS> .\rag-env\Scripts\Activate
+PS> pip install -r requirements.txt
 
-- .env is not included in the repo—you must create this file and add your OpenAI API key (https://openai.com/api/).
+```
+
+## Instale as bibliotecas necessárias
+
+As bibliotecas usadas no projeto estão listadas no arquivo requirements.txt. Ao rodar "pip install -r requirements.txt", todas as bibliotecas listadas dentro desse arquivo serão instaladas. Isso só precisa ser feito uma vez. 
+
+## Organização do Projeto
 
 
-## OpenAI API Key Configuration
+├── meus_arquivos               # Pasta com os arquivos PDF a serem processados
+├── main_rag.ipynb              # Notebook principal com o pipeline RAG
+├── requirements.txt            # Bibliotecas necessárias
+├── .env                        # Armazena sua chave de API da OpenAI
+└── README.md                   # Este arquivo
 
-Create a `.env` file in the project root with your API key:
+
+- A pasta 'meus_arquivos' contém um documento base (um artigo ciéntifico sobre RAGs). Você deve substituir com os arquivos que desejar carregar para a RAG. 
+- O '.env' não está presente. Portanto, você deve criar esse arquivo, e gerar sua chave de API pelo site da OpenAI (https://openai.com/api/). 
+
+## Configuração da chave da OpenAI 
+Crie um arquivo .env na raiz do projeto com sua chave de API:
 
 OPENAI_API_KEY=sk-xxxxxxxxxxxxxxxxxxxxxxxx
 
-The notebook will use load_dotenv() to read this key automatically.
+O notebook usará load_dotenv() para ler essa chave automaticamente.
 
+##  Execução
 
-## Running the Pipeline
+1. Ative seu ambiente virtual e instale as bibliotecas
 
-1. Activate your virtual environment and install dependencies  
-2. Create the `.env` file and obtain your OpenAI API key  
-3. Run the `main_rag.ipynb` notebook  
-4. Follow these steps in order:  
-   - Imports  
-   - Document loading  
-   - Chunking  
-   - Embeddings creation and storage  
-   - Retriever setup  
-   - Prompt generation  
-   - RAG Chain execution  
+2. Crie o arquivo .env e gere sua chave de API na OpenAI
 
+3. Execute o notebook main_notebook.ipynb
 
+4. Siga as etapas:
 
+    - Importações
 
+    - Carregamento dos documentos
 
+    - Chunking
 
+    - Criação e armazenamento de embeddings
 
+    - Retriever
 
+    - Geração de prompt
 
-
-
-
-
+    - RAG Chain
