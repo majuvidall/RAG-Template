@@ -5,7 +5,7 @@ This repository contains a practical, customizable **RAG (Retrieval-Augmented Ge
 In this template, we use a base document (a scientific article on RAG) located in the `meus_arquivos` folder. All parameters and prompts are configured for that document—you should replace it with your own document and adapt the parameters and prompts as shown in each step.
 
 ---
-
+     
 ## Introduction
 
 **RAG (Retrieval-Augmented Generation)** is an approach that combines:
